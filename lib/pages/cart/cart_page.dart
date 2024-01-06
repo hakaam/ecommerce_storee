@@ -39,9 +39,8 @@ class _CartPageState extends State<CartPage> {
         actions: [
           TextButton(
             onPressed: () {
-              // Clear the cart when the "Clear Cart" button is tapped
               cartCubit.clearCart();
-              refreshCartItems(); // Refresh cart items after clearing
+              refreshCartItems();
             },
             child: const Text(
               'Clear Cart',

@@ -44,7 +44,6 @@ class ProductCubit extends Cubit<ProductState> {
       final List<Map<String, dynamic>> productMaps =
       await productService.searchProducts(query);
 
-      // Convert product maps to ProductModels
       final List<ProductModel> products = productMaps.map((map) {
         return ProductModel.fromMap(map);
       }).toList();

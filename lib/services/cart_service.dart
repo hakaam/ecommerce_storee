@@ -14,7 +14,6 @@ class CartService {
     if (product.productId != null &&
         product.name != null &&
         product.image != null) {
-      // Convert ProductModel to CartItem
       CartItem cartItem = CartItem(
         id: product.productId!,
         name: product.name!,

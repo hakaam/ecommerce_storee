@@ -40,7 +40,6 @@ class CategoryWidget extends StatelessWidget {
             padding: EdgeInsets.all(8),
             child: GestureDetector(
               onTap: () {
-                // Navigate to ProductByCategoryScreen when a category is tapped
                 Navigator.push(
                   context,
                   MaterialPageRoute(

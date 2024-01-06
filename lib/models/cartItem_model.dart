@@ -2,7 +2,7 @@ class CartItem {
   final String id;
   final String name;
   final double price;
-  int quantity; // Make quantity non-final
+  int quantity;
   final String image;
 
   CartItem({

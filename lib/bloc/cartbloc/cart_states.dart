@@ -26,7 +26,7 @@ class CartLoaded extends CartState {
 
 class CartUpdated extends CartState {
   final List<CartItem> cartItems;
-  final double totalPrice; // Make sure totalPrice is defined
+  final double totalPrice;
 
   CartUpdated({required this.cartItems, required this.totalPrice});
 

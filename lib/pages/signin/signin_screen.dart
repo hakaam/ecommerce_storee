@@ -20,7 +20,6 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
@@ -28,30 +27,21 @@ class _SignInScreenState extends State<SignInScreen> {
             key: _formKey,
             child: SingleChildScrollView(
               child: Column(
-
                 children: [
-
-              
                   SizedBox(
                     height: 210,
                   ),
-                  Text('Ecommerce Store',
-                    style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold
-
-                    ),
-
+                  Text(
+                    'Ecommerce Store',
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                   ),
-                  Text('Sign In',
-                    style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold
-
-                    ),
-
+                  Text(
+                    'Sign In',
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                   ),
-                 SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   TextFormField(
                     enableSuggestions: true,
                     keyboardType: TextInputType.emailAddress,
@@ -64,7 +54,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       hintText: 'Email',
                       contentPadding:
-                      EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                          EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                       hintStyle: TextStyle(color: Colors.black),
                       prefixIcon: Icon(
                         Icons.email_outlined,
@@ -95,7 +85,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       hintText: 'Password',
                       contentPadding:
-                      EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                          EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                       hintStyle: TextStyle(color: Colors.black),
                       prefixIcon: Icon(
                         Icons.lock_outline,
@@ -120,7 +110,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         Navigator.pushAndRemoveUntil(
                           context,
                           MaterialPageRoute(builder: (_) => RegisterScreen()),
-                              (route) => false,
+                          (route) => false,
                         );
                       },
                       child: Text(
@@ -147,15 +137,18 @@ class _SignInScreenState extends State<SignInScreen> {
                         if (_formKey.currentState!.validate()) {
                           // Call the login function from AuthCubit
                           try {
-                            await context.read<AuthCubit>().signInWithEmailAndPassword(
-                              email: _email,
-                              password: _password,
-                              context: context,
-                            );
+                            await context
+                                .read<AuthCubit>()
+                                .signInWithEmailAndPassword(
+                                  email: _email,
+                                  password: _password,
+                                  context: context,
+                                );
                             Navigator.pushAndRemoveUntil(
                               context,
-                              MaterialPageRoute(builder: (_) => BottomNavigationBarPage()),
-                                  (route) => false,
+                              MaterialPageRoute(
+                                  builder: (_) => BottomNavigationBarPage()),
+                              (route) => false,
                             );
                             print('Login SucessFully');
                             // Navigate to another screen after successful login

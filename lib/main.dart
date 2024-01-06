@@ -61,12 +61,10 @@ class MyApp extends StatelessWidget {
         ),
         home: BlocBuilder<AuthCubit, AuthState>(
           builder: (context, state) {
-            // Handle authentication state and navigate accordingly
             return state is AuthAuthenticated
                 ? BottomNavigationBarPage()
                 :  SignInScreen();
-                // ? LocationPage()
-                // :  LocationPage();
+
           },
         ),
       ),
